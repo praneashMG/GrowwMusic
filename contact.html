@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/growwpark_logo.jpg" type="image/jpeg">
     <title>Groww Music Academy – Contact</title>
+<script src="https://unpkg.com/lucide@latest"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -518,42 +519,95 @@ flex items-center justify-center gap-2 sm:gap-3 group">
 
 
         <!-- 3. LOCATION & MAP — Split layout, address card + map -->
-        <section class="py-16 bg-hover">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row split-map gap-10 items-stretch">
-                    <!-- address card: warm, purple accent -->
-                    <div class="lg:w-1/2 reveal bg-background rounded-3xl p-8 md:p-10 border border-border shadow-lg flex flex-col justify-center">
-                        <span class="text-accent uppercase tracking-widest text-sm font-bold mb-3">📍 Our home</span>
-                        <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-text mb-6">Groww Music Studio</h3>
-                        <div class="space-y-6 text-secondary-text text-lg">
-                            <div class="flex items-start gap-4">
-                                <span class="text-lavender text-2xl">🎵</span>
-                                <p class="leading-relaxed"><span class="font-bold text-accent">Address:</span><br>124 Melody Lane, Suite 200, Los Angeles, CA 90012</p>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <span class="text-lavender text-2xl">🚗</span>
-                                <p><span class="font-bold text-accent">Parking:</span> Free underground parking, entrance on 5th Street</p>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <span class="text-lavender text-2xl">📍</span>
-                                <p><span class="font-bold text-accent">Landmark:</span> Opposite Grand Park fountain, next to the jazz cafe</p>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <span class="text-lavender text-2xl">⏰</span>
-                                <p><span class="font-bold text-accent">Studio hours:</span> Mon–Fri 9am–9pm, Sat 10am–8pm, Sun 11am–6pm</p>
-                            </div>
-                        </div>
-                        <div class="mt-8 p-5 bg-lavender/10 rounded-2xl border border-lavender/30">
-                            <p class="text-sm italic text-secondary-text">🚇 Metro: Grand Ave Station, 3 min walk. We'll save you a seat!</p>
-                        </div>
-                    </div>
-                    <!-- Google map embed (simulated placeholder) – responsive, clean -->
-                    <div class="lg:w-1/2 reveal h-96 lg:h-auto min-h-[360px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405770525!2d-118.6919257328125!3d34.02016130653294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22f80b36ab6a2be!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1712354567890!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full object-cover"></iframe>
-                    </div>
+      <section class="py-16 bg-hover">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col lg:flex-row gap-10 items-stretch">
+
+            <!-- Address card -->
+            <div class="lg:w-1/2 reveal bg-background rounded-3xl p-8 md:p-10 border border-border shadow-lg flex flex-col justify-center">
+
+                <span class="text-accent uppercase tracking-widest text-sm font-bold mb-3 flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    Our home
+                </span>
+
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-text mb-6">
+                    Groww Music Studio
+                </h3>
+
+               <div class="space-y-6 text-secondary-text text-lg">
+
+    
+
+    <div class="grid grid-cols-[28px_1fr] gap-4 items-start">
+        <i data-lucide="music" class="w-6 h-6 text-lavender mt-1"></i>
+        <p>
+            <span class="font-bold text-accent">Address:</span>
+            124 Melody Lane, Suite 200, Los Angeles, CA 90012
+        </p>
+    </div>
+<div class="grid grid-cols-[28px_1fr] gap-4 items-start">
+        <i data-lucide="car" class="w-6 h-6 text-lavender mt-1"></i>
+        <p>
+            <span class="font-bold text-accent">Parking:</span>
+            Free underground parking, entrance on 5th Street
+        </p>
+    </div>
+
+    <div class="grid grid-cols-[28px_1fr] gap-4 items-start">
+        <i data-lucide="map" class="w-6 h-6 text-lavender mt-1"></i>
+        <p>
+            <span class="font-bold text-accent">Landmark:</span>
+            Opposite Grand Park fountain, next to the jazz cafe
+        </p>
+    </div>
+
+    <div class="grid grid-cols-[28px_1fr] gap-4 items-start">
+        <i data-lucide="clock" class="w-6 h-6 text-lavender mt-1"></i>
+        <p>
+            <span class="font-bold text-accent">Studio hours:</span>
+            Mon–Fri 9am–9pm, Sat 10am–8pm, Sun 11am–6pm
+        </p>
+    </div>
+
+</div>
+
+
+                <div class="mt-8 p-5 bg-lavender/10 rounded-2xl border border-lavender/30 flex items-start gap-3">
+                    <i data-lucide="train" class="w-5 h-5 text-accent mt-1"></i>
+                    <p class="text-sm italic text-secondary-text">
+                        Metro: Grand Ave Station, 3 min walk. We'll save you a seat!
+                    </p>
                 </div>
+
             </div>
-        </section>
+
+            <!-- Map -->
+            <div class="lg:w-1/2 reveal h-96 lg:h-auto min-h-[360px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405770525!2d-118.6919257328125!3d34.02016130653294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22f80b36ab6a2be!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1712354567890!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-full object-cover">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+lucide.createIcons();
+</script>
+
 
         <!-- 4. VISIT OUR STUDIO — trust builder, photo showcase + warm invite -->
         <section class="py-24 bg-background">
@@ -682,8 +736,13 @@ flex items-center gap-2">
     <div id="mobile-menu-drawer" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300">
         <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
         <div id="drawer-content" class="absolute top-0 left-0 right-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[80vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out">
-            <div class="flex justify-between items-center pb-4 border-b border-border">
-                <h3 class="text-xl font-serif font-bold text-accent">Groww Music Menu</h3>
+           <div class="flex justify-between items-center pb-4 border-b border-border">
+
+    <a href="index.html" class="text-2xl font-serif font-extrabold tracking-wide">
+        <span class="text-purple">Groww</span>
+        <span class="text-lavender">Music</span>
+    </a>
+
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200" aria-label="Close Menu" title="Close Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
@@ -728,12 +787,7 @@ flex items-center gap-2">
                     </svg>
                     <span class="text-xs mt-1 text-secondary-text">RTL</span>
                 </button>
-                <button class="icon-btn flex flex-col items-center text-primary-text hover:text-accent p-2 transition duration-200" title="Playlists">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <span class="text-xs mt-1 text-secondary-text">Playlists</span>
-                </button>
+               
             </div>
         </div>
     </div>
@@ -743,7 +797,11 @@ flex items-center gap-2">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-y-10 pb-10 border-b border-gray-700">
                 <div class="lg:col-span-2">
-                    <h3 class="text-3xl font-serif font-bold mb-4 text-purple">Groww<span class="text-lavender">Music</span></h3>
+<a href="index.html" class="inline-block hover:opacity-80 transition">
+  <h3 class="text-3xl font-serif font-bold mb-4 text-purple">
+    Groww<span class="text-lavender">Music</span>
+  </h3>
+</a>
                     <p class="text-sm leading-relaxed max-w-sm !text-white opacity-80">The ultimate destination for music lovers. Explore artist interviews, album reviews, concert updates, and exclusive music content.</p>
                     <div class="flex space-x-4 mt-6">
                         <a href="#" class="!text-white hover:!text-lavender transition"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
@@ -753,7 +811,7 @@ flex items-center gap-2">
                 </div>
                 <div><h4 class="footer-heading font-semibold text-lg mb-4">Genres</h4><ul class="space-y-2"><li><a href="#" class="footer-link">Pop</a></li><li><a href="#" class="footer-link">Rock</a></li><li><a href="#" class="footer-link">Hip Hop</a></li><li><a href="#" class="footer-link">Jazz</a></li><li><a href="#" class="footer-link">Electronic</a></li></ul></div>
                 <div><h4 class="footer-heading font-semibold text-lg mb-4">Quick Links</h4><ul class="space-y-2"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="booking.html" class="footer-link">Book Now</a></li><li><a href="services.html" class="footer-link">Services</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="about.html" class="footer-link">About</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
-                <div><h4 class="footer-heading font-semibold text-lg mb-4">Music Updates</h4><p class="text-sm mb-4 footer-newsletter-text">Get exclusive academy updates.</p><div class="flex flex-col space-y-3"><input type="email" placeholder="Your email address" class="p-3 text-sm rounded-lg bg-gray-800 border border-gray-700 focus:ring-1 focus:ring-lavender focus:outline-none text-white placeholder-gray-400" /><button class="bg-lavender text-black font-semibold py-3 rounded-lg hover:bg-purple hover:text-white transition duration-200 shadow-md">Subscribe</button></div></div>
+                <div><h4 class="footer-heading font-semibold text-lg mb-4">Music Updates</h4><p class="text-sm mb-4 footer-newsletter-text">Get exclusive academy updates.</p><div class="flex flex-col space-y-3"><input type="email" placeholder="Your email address" class="p-3 text-sm rounded-lg bg-gray-800 border border-gray-700 focus:ring-1 focus:ring-lavender focus:outline-none text-white placeholder-gray-400" /></div></div>
             </div>
             <div class="py-4 text-center text-gray-400 text-xs">© 2025 Groww Music. All rights reserved. <span class="hover:text-lavender transition cursor-pointer">| Privacy Policy</span> <span class="hover:text-lavender transition cursor-pointer">| Terms of Service</span></div>
         </div>

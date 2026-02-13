@@ -236,6 +236,45 @@
                 </div>
             </div>
 
+            <!-- ==========   THREE NEW BAR CHART SECTIONS (ADDED)   ========== -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 reveal">
+                <!-- Bar chart 1: Weekly signups -->
+                <div class="dashboard-card p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-serif font-bold text-primary-text">📊 Weekly signups</h3>
+                        <span class="text-xs bg-hover px-2 py-1 rounded-full text-accent">+22%</span>
+                    </div>
+                    <div class="flex items-end justify-between h-32 gap-1 mt-4">
+                        <div class="w-1/5 h-full flex flex-col justify-end items-center"><div class="w-full chart-bar rounded-t" style="height:60%"></div><span class="text-xs mt-1 text-secondary-text">M</span></div>
+                        <div class="w-1/5 h-full flex flex-col justify-end items-center"><div class="w-full chart-bar rounded-t" style="height:85%"></div><span class="text-xs mt-1 text-secondary-text">T</span></div>
+                        <div class="w-1/5 h-full flex flex-col justify-end items-center"><div class="w-full chart-bar rounded-t" style="height:45%"></div><span class="text-xs mt-1 text-secondary-text">W</span></div>
+                        <div class="w-1/5 h-full flex flex-col justify-end items-center"><div class="w-full chart-bar rounded-t" style="height:70%"></div><span class="text-xs mt-1 text-secondary-text">T</span></div>
+                       <div class="w-1/5 h-full flex flex-col justify-end items-center"><div class="w-full chart-bar rounded-t" style="height:95%"></div><span class="text-xs mt-1 text-secondary-text">F</span></div>
+                    </div>
+                    <p class="text-xs text-secondary-text mt-3 text-center">↗ 148 new this week</p>
+                </div>
+                <!-- Bar chart 2: Course popularity (enrollments) -->
+                <div class="dashboard-card p-5">
+                    <h3 class="font-serif font-bold text-primary-text mb-3">🎸 Top courses</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between text-xs mb-1"><span>Piano</span><span>240</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs mb-1"><span>Vocals</span><span>188</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:70%"></div></div></div>
+                        <div><div class="flex justify-between text-xs mb-1"><span>Production</span><span>312</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:100%"></div></div></div>
+                        <div><div class="flex justify-between text-xs mb-1"><span>Violin</span><span>96</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:40%"></div></div></div>
+                    </div>
+                </div>
+                <!-- Bar chart 3: Revenue by room (horizontal bars) -->
+                <div class="dashboard-card p-5">
+                    <h3 class="font-serif font-bold text-primary-text mb-3">💰 Revenue by room</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between text-xs mb-1"><span>Studio A</span><span>$8.2k</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:95%"></div></div></div>
+                        <div><div class="flex justify-between text-xs mb-1"><span>Studio B</span><span>$6.7k</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:78%"></div></div></div>
+                        <div><div class="flex justify-between text-xs mb-1"><span>Hall</span><span>$4.3k</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:52%"></div></div></div>
+                        <div><div class="flex justify-between text-xs mb-1"><span>Online</span><span>$9.1k</span></div><div class="w-full bg-border h-2 rounded-full"><div class="chart-bar h-2 rounded-full" style="width:100%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Two column: User management + quick actions (reveal) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 reveal">
                 <!-- USERS TABLE CARD (compact) -->
