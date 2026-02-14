@@ -361,37 +361,56 @@
                             Shape your future among a new generation of artists. Mentorship, world‑class studios, and a creative home.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-5 pt-4">
-                            <button class="theme-btn px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:scale-[1.03] transition-transform">Start Learning Today</button>
-                            <button class="border-2 border-accent/40 text-primary-text backdrop-blur-sm px-10 py-5 rounded-xl font-bold text-lg hover:bg-accent/5 transition-all">View Courses</button>
+<button class="theme-btn px-10 py-5 rounded-xl font-bold text-lg shadow-[0_10px_25px_rgba(90,24,154,0.35)] hover:scale-[1.03] transition-transform">
+  Start Learning Today
+</button>
+<button 
+  class="px-10 py-5 rounded-xl font-bold text-lg transition-all border-2"
+  style="
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(90, 24, 154, 0.08);
+  "
+  onmouseover="this.style.background='var(--color-accent)';this.style.color='#fff'"
+  onmouseout="this.style.background='rgba(90, 24, 154, 0.08)';this.style.color='var(--color-accent)'"
+>
+  View Courses
+</button>
+
                         </div>
                     </div>
 
                     <!-- RIGHT: layered floating images / musician collage -->
-                    <div class="relative h-[500px] md:h-[600px] w-full reveal">
-                        <div class="absolute top-5 right-5 w-72 md:w-96 z-20 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-all duration-700">
-                            <img src="/assets/piano2.avif" alt="violinist" class="rounded-3xl border-8 border-white/10 object-cover w-full h-80 md:h-96">
-                            <div class="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/30"></div>
-                        </div>
-                        <div class="absolute bottom-5 left-0 w-64 md:w-80 z-10 rounded-3xl shadow-2xl -rotate-6 hover:rotate-0 transition-all duration-700">
-                            <img src="/assets/girl2.webp" alt="pianist" class="rounded-3xl border-8 border-white/10 object-cover w-full h-64">
-                        </div>
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-tr from-[#C77DFF]/30 to-[#5A189A]/30 rounded-full blur-3xl -z-10"></div>
-                        <!-- subtle glow dot -->
-                        <div class="absolute bottom-20 right-20 w-3 h-3 bg-lavender rounded-full animate-pulse"></div>
-                    </div>
+                    <div class="relative h-[500px] md:h-[600px] w-full reveal hidden md:block">
+        <div class="absolute top-5 right-5 w-72 md:w-96 z-20 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-all duration-700">
+            <img src="/assets/piano2.avif" alt="violinist" class="rounded-3xl border-8 border-white/10 object-cover w-full h-80 md:h-96">
+            <div class="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/30"></div>
+        </div>
+
+        <div class="absolute bottom-5 left-0 w-64 md:w-80 z-10 rounded-3xl shadow-2xl -rotate-6 hover:rotate-0 transition-all duration-700">
+            <img src="/assets/girl2.webp" alt="pianist" class="rounded-3xl border-8 border-white/10 object-cover w-full h-64">
+        </div>
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-tr from-[#C77DFF]/30 to-[#5A189A]/30 rounded-full blur-3xl -z-10"></div>
+
+        <div class="absolute bottom-20 right-20 w-3 h-3 bg-lavender rounded-full animate-pulse"></div>
+    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- █████████████████ 2. WHY MUSIC MATTERS – EDITORIAL STORYTELLING █████████████████ -->
-        <section class="py-28 bg-hover/30">
+<section class="py-10 md:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-12 gap-12 items-start">
                     <!-- left: magazine text column -->
                     <div class="lg:col-span-6 reveal space-y-6">
-                        <div class="flex items-center gap-3">
+<div class="flex flex-col items-center gap-3 text-center">
                             <span class="w-12 h-0.5 bg-accent"></span>
-                            <span class="text-accent font-bold uppercase tracking-[0.25em] text-sm">Manifesto</span>
+<span class="block text-center text-accent font-bold uppercase tracking-[0.25em] text-sm">
+  Manifesto
+</span>
                         </div>
                         <h2 class="text-5xl md:text-6xl font-serif font-bold leading-[1.1]">
                             Music builds<br>confidence<span class="text-accent-light">.</span>
@@ -416,12 +435,11 @@
                     <div class="lg:col-span-5 lg:col-start-8 reveal relative">
                         <div class="relative">
                             <div class="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
-                            <div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl rotate-[2deg] hover:rotate-0 transition-transform">
+<div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl transition-transform">
                                 <img src="/assets/ho2.webp" alt="artist recording" class="w-full h-[500px] object-cover">
                                 <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
                             </div>
                             <!-- decorative frame -->
-                            <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 rounded-[40px] -z-10"></div>
                         </div>
                     </div>
                 </div>
@@ -668,7 +686,9 @@
                             Explore Programs
                         </button>
                     </div>
-                    <div class="mt-12 text-lavender text-sm uppercase tracking-[0.3em] font-semibold">Limited seats – spring semester</div>
+<div class="mt-12 text-white text-sm uppercase tracking-[0.3em] font-semibold">
+  Limited seats – spring semester
+</div>
                 </div>
             </div>
         </section>

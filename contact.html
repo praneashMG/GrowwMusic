@@ -215,9 +215,14 @@
             opacity: 1;
             padding: 1rem 1rem 1.5rem 1rem;
         }
-        .faq-answer > div {
-            overflow: hidden;
-        }
+       .faq-answer > div {
+    overflow: hidden;
+}
+
+.faq-answer.open > div {
+    overflow: visible;
+}
+
 .bg-purple {
     background-color: var(--color-accent);
 }
@@ -455,33 +460,73 @@
                     <div class="relative group">
                         <input type="text" required
                                class="peer w-full bg-transparent border-b-2 border-border py-3 focus:outline-none focus:border-accent text-primary-text placeholder-transparent font-medium">
-                        <label class="absolute left-0 -top-6 text-[10px] font-black uppercase tracking-[0.2em] text-secondary-text transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-accent pointer-events-none">
-                            Full Name
-                        </label>
+   <label class="
+absolute left-0 -top-6
+font-black uppercase
+tracking-wide sm:tracking-[0.2em]
+text-base sm:text-sm lg:text-[10px]
+text-secondary-text transition-all
+peer-placeholder-shown:text-base
+peer-focus:-top-6 peer-focus:text-sm peer-focus:text-accent
+pointer-events-none">
+Full Name
+</label>
+
+
                     </div>
 
                     <div class="relative group">
                         <input type="email" required
                                class="peer w-full bg-transparent border-b-2 border-border py-3 focus:outline-none focus:border-accent text-primary-text placeholder-transparent font-medium">
-                        <label class="absolute left-0 -top-6 text-[10px] font-black uppercase tracking-[0.2em] text-secondary-text transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-accent pointer-events-none">
-                            Email
-                        </label>
+                     <label class="
+absolute left-0 -top-6
+font-black uppercase
+tracking-wide sm:tracking-[0.2em]
+text-base sm:text-sm lg:text-[10px]
+text-secondary-text transition-all
+peer-placeholder-shown:text-base
+peer-placeholder-shown:top-3
+peer-focus:-top-6 peer-focus:text-sm peer-focus:text-accent
+pointer-events-none">
+Email
+</label>
+
                     </div>
 
                     <div class="relative group md:col-span-2">
                         <input type="text" required
                                class="peer w-full bg-transparent border-b-2 border-border py-3 focus:outline-none focus:border-accent text-primary-text placeholder-transparent font-medium">
-                        <label class="absolute left-0 -top-6 text-[10px] font-black uppercase tracking-[0.2em] text-secondary-text transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-accent pointer-events-none">
-                            Interested In
-                        </label>
+                      <label class="
+absolute left-0 -top-6
+font-black uppercase
+tracking-wide sm:tracking-[0.2em]
+text-base sm:text-sm lg:text-[10px]
+text-secondary-text transition-all
+peer-placeholder-shown:text-base
+peer-placeholder-shown:top-3
+peer-focus:-top-6 peer-focus:text-sm peer-focus:text-accent
+pointer-events-none">
+Interested In
+</label>
+
                     </div>
 
                     <div class="relative group md:col-span-2">
                         <textarea rows="3" required
                                   class="peer w-full bg-transparent border-b-2 border-border py-3 focus:outline-none focus:border-accent text-primary-text placeholder-transparent resize-none font-medium"></textarea>
-                        <label class="absolute left-0 -top-6 text-[10px] font-black uppercase tracking-[0.2em] text-secondary-text transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-accent pointer-events-none">
-                            Your Message
-                        </label>
+                      <label class="
+absolute left-0 -top-6
+font-black uppercase
+tracking-wide sm:tracking-[0.2em]
+text-base sm:text-sm lg:text-[10px]
+text-secondary-text transition-all
+peer-placeholder-shown:text-base
+peer-placeholder-shown:top-3
+peer-focus:-top-6 peer-focus:text-sm peer-focus:text-accent
+pointer-events-none">
+Your Message
+</label>
+
                     </div>
 
                     <div class="md:col-span-2 pt-4">
@@ -603,10 +648,10 @@ flex items-center justify-center gap-2 sm:gap-3 group">
 
     </div>
 </section>
-
 <script>
 lucide.createIcons();
 </script>
+
 
 
         <!-- 4. VISIT OUR STUDIO — trust builder, photo showcase + warm invite -->
@@ -631,7 +676,7 @@ lucide.createIcons();
                         <h3 class="text-4xl md:text-5xl font-serif font-bold text-primary-text mt-2 mb-6">Feel the music, <br>before you decide.</h3>
                         <p class="text-xl text-secondary-text leading-relaxed">Drop by anytime. Our studio doors are open for you to see the classrooms, meet our instructors, and even catch a live lesson. No appointment needed — just bring your curiosity.</p>
                         <div class="mt-8 bg-lavender/10 p-6 rounded-3xl border border-lavender/30 flex items-start gap-4">
-                            <span class="text-4xl">☕</span>
+<i data-lucide="coffee" class="w-8 h-8 text-accent mt-1"></i>
                             <div>
                                 <h4 class="font-bold text-lg text-accent">Trial visit & coffee on us</h4>
                                 <p class="text-secondary-text">Schedule a 20-minute tour and enjoy a free drink while you watch a mini-class. Kids and beginners especially welcome.</p>
@@ -654,68 +699,115 @@ flex items-center gap-2">
             </div>
         </section>
 
-        <!-- 5. QUICK HELP / FAQ — expandable accordion, reduce hesitation -->
-        <section class="py-20 bg-hover">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                <div class="text-center mb-14 reveal">
-                    <span class="text-accent uppercase tracking-[0.2em] text-sm font-bold">You ask, we answer</span>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mt-2 text-primary-text">Quick help</h2>
+       <!-- 5. QUICK HELP / FAQ -->
+<section class="py-20 bg-hover">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <div class="text-center mb-14 reveal">
+            <span class="text-accent uppercase tracking-[0.2em] text-sm font-bold">
+                You ask, we answer
+            </span>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mt-2 text-primary-text">
+                Quick help
+            </h2>
+        </div>
+
+        <div class="space-y-2 reveal">
+
+            <!-- FAQ 1 -->
+            <div class="faq-item bg-background rounded-2xl p-2">
+                <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <i data-lucide="music" class="w-5 h-5 text-accent"></i>
+                        How do I enroll?
+                    </span>
+                    <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer text-secondary-text">
+                    <div>Enrollment is easy: fill the contact form, choose a trial class, or just walk in. Our team will guide you through course selection and schedule.</div>
                 </div>
-                <div class="space-y-2 reveal">
-                    <!-- FAQ item 1 -->
-                    <div class="faq-item bg-background rounded-2xl p-2">
-                        <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
-                            <span>🎼 How do I enroll?</span>
-                            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="faq-answer text-secondary-text">
-                            <div>Enrollment is easy: fill the contact form, choose a trial class, or just walk in. Our team will guide you through course selection and schedule.</div>
-                        </div>
-                    </div>
-                    <!-- FAQ item 2 -->
-                    <div class="faq-item bg-background rounded-2xl p-2">
-                        <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
-                            <span>💻 Online vs in-person – which is better?</span>
-                            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="faq-answer text-secondary-text">
-                            <div>Both are incredible! In‑person gives you studio gear and community; online offers flexibility and one‑on‑one zoom coaching. Many students combine both.</div>
-                        </div>
-                    </div>
-                    <!-- FAQ item 3 -->
-                    <div class="faq-item bg-background rounded-2xl p-2">
-                        <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
-                            <span>🧒 Age requirements?</span>
-                            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="faq-answer text-secondary-text">
-                            <div>We welcome ages 6 to 99! Youth programs (6–15), teens, adults, and seniors. No upper limit – we have students in their 70s learning piano.</div>
-                        </div>
-                    </div>
-                    <!-- FAQ item 4 -->
-                    <div class="faq-item bg-background rounded-2xl p-2">
-                        <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
-                            <span>🎤 Trial class details</span>
-                            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="faq-answer text-secondary-text">
-                            <div>30‑minute private session with one of our mentors, only $25 (deducted from first month if you join). Includes instrument orientation.</div>
-                        </div>
-                    </div>
-                    <!-- FAQ item 5 -->
-                    <div class="faq-item bg-background rounded-2xl p-2">
-                        <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
-                            <span>💳 Payment options</span>
-                            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="faq-answer text-secondary-text">
-                            <div>Monthly tuition, semester packages, or pay‑as‑you‑go. Scholarships available for qualifying students. All major cards, PayPal, and instalments.</div>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-center mt-12 text-secondary-text italic">Still have questions? <a href="#" class="text-accent underline font-semibold">chat with us</a> or call (213) 555‑7890.</p>
             </div>
-        </section>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item bg-background rounded-2xl p-2">
+                <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <i data-lucide="monitor" class="w-5 h-5 text-accent"></i>
+                        Online vs in-person – which is better?
+                    </span>
+                    <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer text-secondary-text">
+                    <div>Both are incredible! In-person gives you studio gear and community; online offers flexibility and one-on-one zoom coaching. Many students combine both.</div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item bg-background rounded-2xl p-2">
+                <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <i data-lucide="users" class="w-5 h-5 text-accent"></i>
+                        Age requirements?
+                    </span>
+                    <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer text-secondary-text">
+                    <div>We welcome ages 6 to 99! Youth programs (6–15), teens, adults, and seniors. No upper limit – we have students in their 70s learning piano.</div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item bg-background rounded-2xl p-2">
+                <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <i data-lucide="mic" class="w-5 h-5 text-accent"></i>
+                        Trial class details
+                    </span>
+                    <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer text-secondary-text">
+                    <div>30-minute private session with one of our mentors, only $25 (deducted from first month if you join). Includes instrument orientation.</div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item bg-background rounded-2xl p-2">
+                <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center text-primary-text font-semibold text-lg" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <i data-lucide="credit-card" class="w-5 h-5 text-accent"></i>
+                        Payment options
+                    </span>
+                    <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer text-secondary-text">
+                    <div>Monthly tuition, semester packages, or pay-as-you-go. Scholarships available for qualifying students. All major cards, PayPal, and instalments.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="text-center mt-12 text-secondary-text italic">
+            Still have questions?
+            <a href="#" class="text-accent underline font-semibold">chat with us</a>
+            or call (213) 555-7890.
+        </p>
+
+    </div>
+</section>
+<script>
+lucide.createIcons();
+</script>
+
 
         <!-- small spacer: natural flow -->
     </main>

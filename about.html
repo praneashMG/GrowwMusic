@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/growwpark_logo.jpg" type="image/jpeg">
     <title>Groww Music Academy Pro</title>
+<script src="https://unpkg.com/lucide@latest"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -583,40 +584,79 @@ html[data-theme='dark'] .mentor-badge p {
             </div>
         </section>
 
-        <!-- 2. MISSION & VALUES — Bold Philosophy Grid (animated hover icons) -->
-        <section class="py-28 bg-background">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-20 reveal">
-                    <span class="text-accent uppercase tracking-[0.2em] text-sm font-bold">The Groww Ethos</span>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mt-4 text-primary-text">Joy. Progress. Belonging.</h2>
+       <!-- 2. MISSION & VALUES -->
+<section class="py-28 bg-background">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+            <span class="text-accent uppercase tracking-[0.2em] text-sm font-bold">
+                The Groww Ethos
+            </span>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mt-4 text-primary-text">
+                Joy. Progress. Belonging.
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+            <!-- Pillar 1 -->
+            <div class="value-card p-8 reveal flex flex-col items-center text-center">
+                <div class="value-icon-glow mb-6 text-purple">
+                    <i data-lucide="music" class="w-10 h-10"></i>
                 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                    <!-- pillar 1 -->
-                    <div class="value-card p-8 reveal flex flex-col items-center text-center">
-                        <div class="value-icon-glow mb-6 text-4xl text-purple">🎵</div>
-                        <h3 class="text-2xl font-bold mb-3 text-accent">Learn with joy</h3>
-                        <p class="text-secondary-text">Mistakes are masterpieces in progress. Our rooms echo with laughter, not judgment.</p>
-                        <div class="w-12 h-1 bg-lavender mt-6 rounded-full"></div>
-                    </div>
-                    <!-- pillar 2 -->
-                    <div class="value-card p-8 reveal flex flex-col items-center text-center" style="transition-delay:0.1s">
-                        <div class="value-icon-glow mb-6 text-4xl text-purple">🎯</div>
-                        <h3 class="text-2xl font-bold mb-3 text-accent">Structured progress</h3>
-                        <p class="text-secondary-text">Freedom within framework. Milestones that motivate, not intimidate.</p>
-                        <div class="w-12 h-1 bg-lavender mt-6 rounded-full"></div>
-                    </div>
-                    <!-- pillar 3 -->
-                    <div class="value-card p-8 reveal flex flex-col items-center text-center" style="transition-delay:0.2s">
-                        <div class="value-icon-glow mb-6 text-4xl text-purple">🤝</div>
-                        <h3 class="text-2xl font-bold mb-3 text-accent">Supportive environment</h3>
-                        <p class="text-secondary-text">You're not a number. We remember your name, your style, your story.</p>
-                        <div class="w-12 h-1 bg-lavender mt-6 rounded-full"></div>
-                    </div>
-                    <!-- pillar 4 -->
-                  
-                </div>
+
+                <h3 class="text-2xl font-bold mb-3 text-accent">
+                    Learn with joy
+                </h3>
+
+                <p class="text-secondary-text">
+                    Mistakes are masterpieces in progress. Our rooms echo with laughter, not judgment.
+                </p>
+
+                <div class="w-12 h-1 bg-lavender mt-6 rounded-full"></div>
             </div>
-        </section>
+
+            <!-- Pillar 2 -->
+            <div class="value-card p-8 reveal flex flex-col items-center text-center" style="transition-delay:0.1s">
+                <div class="value-icon-glow mb-6 text-purple">
+                    <i data-lucide="target" class="w-10 h-10"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-3 text-accent">
+                    Structured progress
+                </h3>
+
+                <p class="text-secondary-text">
+                    Freedom within framework. Milestones that motivate, not intimidate.
+                </p>
+
+                <div class="w-12 h-1 bg-lavender mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="value-card p-8 reveal flex flex-col items-center text-center" style="transition-delay:0.2s">
+                <div class="value-icon-glow mb-6 text-purple">
+                    <i data-lucide="users" class="w-10 h-10"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-3 text-accent">
+                    Supportive environment
+                </h3>
+
+                <p class="text-secondary-text">
+                    You're not a number. We remember your name, your style, your story.
+                </p>
+
+                <div class="w-12 h-1 bg-lavender mt-6 rounded-full"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+    lucide.createIcons();
+
+    </script>
 
         <!-- 3. MEET OUR INSTRUCTORS — premium editorial gallery (layered cards) -->
         <section class="py-28 bg-hover">

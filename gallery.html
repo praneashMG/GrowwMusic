@@ -178,12 +178,15 @@
         }
 
         /* Masonry-style collage – energetic grid */
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            grid-auto-rows: 280px;
-            gap: 1.5rem;
-        }
+       .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 280px;
+    gap: 1.5rem;
+
+    grid-auto-flow: dense; /* ⭐ THIS FILLS GAPS */
+}
+
         .masonry-item {
             border-radius: 1.5rem;
             overflow: hidden;
@@ -455,10 +458,7 @@
                         <img src="/assets/music.avif" alt="theory class">
                         <div class="img-caption"><span class="font-semibold">📝 Theory fun</span> — games & notes</div>
                     </div>
-                    <div class="masonry-item">
-                        <img src="/assets/a3.jpg" alt="vocal coach">
-                        <div class="img-caption"><span class="font-semibold">🎤 Vocal warmup</span> — finding voice</div>
-                    </div>
+                   
                 </div>
             </div>
         </section>
