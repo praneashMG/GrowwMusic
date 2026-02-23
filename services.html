@@ -1050,12 +1050,25 @@ lucide.createIcons();
                             <span class="bg-lavender/20 px-3 py-1 rounded-full">⏱️ ${service.duration}</span>
                             <span class="bg-purple/10 px-3 py-1 rounded-full">🏷️ ${service.level}</span>
                         </div>
-                       <div class="flex items-center justify-between mt-2">
-    <span class="text-xl font-bold text-accent">${service.price}</span>
+                      <div class="mt-4 space-y-3">
+    
+    <!-- Price -->
+    <span class="block text-xl font-bold text-accent">
+        ${service.price}
+    </span>
+
+    <!-- Button -->
     <a href="?id=${service.id}" 
-       class="theme-btn px-6 py-3 rounded-full font-medium transition-all text-sm shadow-md hover:shadow-xl">
-       View Details →
+       class="theme-btn 
+              w-full 
+              h-11 
+              flex items-center justify-center
+              rounded-full font-semibold 
+              text-sm
+              transition-all shadow-md hover:shadow-xl">
+        View Details →
     </a>
+
 </div>
 
                     `;
