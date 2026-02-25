@@ -419,16 +419,17 @@ html[data-theme='dark'] .mentor-badge p {
             </div>
 
             <!-- Mobile Buttons -->
-            <div class="flex items-center xl:hidden space-x-4 rtl:space-x-reverse rtl:ml-4">
-                <button id="mobile-search-open" class="icon-btn text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+<div class="flex items-center xl:hidden space-x-4 md:space-x-4">
+   <button id="mobile-search-open" 
+        class="hidden md:block icon-btn text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">
+                          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
-                <button id="mobile-theme-toggle" class="text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">
-                    <svg class="w-6 h-6 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+<button id="mobile-theme-toggle" 
+        class="hidden md:block text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">                    <svg class="w-6 h-6 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                     <svg class="w-6 h-6 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 </button>
-                <button id="mobile-menu-open" class="icon-btn text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+<button id="mobile-menu-open" 
+        class="icon-btn text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
                 </button>
             </div>
         </nav>
@@ -658,85 +659,128 @@ html[data-theme='dark'] .mentor-badge p {
 
     </script>
 
-        <!-- 3. MEET OUR INSTRUCTORS — premium editorial gallery (layered cards) -->
-        <section class="py-28 bg-hover">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col lg:flex-row justify-between items-center lg:items-end text-center lg:text-left mb-16 reveal">
-                    <div>
-                        <span class="text-accent uppercase tracking-widest font-bold text-sm">Mentors, not just teachers</span>
-                        <h3 class="text-4xl md:text-5xl font-serif font-bold text-primary-text mt-2">Your guides</h3>
-                    </div>
-                    <p class="text-secondary-text max-w-md mt-4 lg:mt-0">Each mentor brings a unique musical DNA — from concert halls to grammys, all choose to teach here.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- mentor 1 -->
-                    <div class="mentor-card reveal group">
-                        <div class="relative overflow-hidden h-80">
-                            <img src="/assets/he4.jpg" alt="Dr. Julian Vance" class="mentor-img w-full h-full object-cover object-top">
-                            <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </div>
-                        <div class="p-6 relative">
-                            <div class="mentor-badge absolute -top-6 left-6 right-6 p-4 rounded-xl">
-                                <h4 class="text-xl font-bold text-accent">Dr. Julian Vance</h4>
-                                <p class="text-sm font-medium">Piano & Composition · 22 yrs</p>
-                            </div>
-                            <div class="mt-10 text-secondary-text">
-                                <p class="italic">“Technique is the skeleton; emotion is the breath.” Juilliard alum, 2x Grammy educator.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- mentor 2 -->
-                    <div class="mentor-card reveal group" style="transition-delay:0.1s">
-                        <div class="relative overflow-hidden h-80">
-                            <img src="/assets/she1.webp" alt="Elena Rodriguez" class="mentor-img w-full h-full object-cover object-top">
-                            <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100"></div>
-                        </div>
-                        <div class="p-6 relative">
-                            <div class="mentor-badge absolute -top-6 left-6 right-6 p-4 rounded-xl">
-                                <h4 class="text-xl font-bold text-accent">Elena Rodriguez</h4>
-                                <p class="text-sm font-medium">Vocal Performance · 18 yrs</p>
-                            </div>
-                            <div class="mt-10 text-secondary-text">
-                                <p class="italic">“Your voice is your fingerprint — let's make it unforgettable.” Metropolitan Opera soloist.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- mentor 3 -->
-                    <div class="mentor-card reveal group" style="transition-delay:0.2s">
-                        <div class="relative overflow-hidden h-80">
-                            <img src="/assets/men2.png"alt="Marcus Chen" class="mentor-img w-full h-full object-cover object-top">
-                            <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100"></div>
-                        </div>
-                        <div class="p-6 relative">
-                            <div class="mentor-badge absolute -top-6 left-6 right-6 p-4 rounded-xl">
-                                <h4 class="text-xl font-bold text-accent">Marcus Chen</h4>
-                                <p class="text-sm font-medium">Digital Production · 15 yrs</p>
-                            </div>
-                            <div class="mt-10 text-secondary-text">
-                                <p class="italic">“Produced for Billie Eilish? No. But I'll help you find your unique sonic signature.”</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- mentor 4 -->
-                    <div class="mentor-card reveal group" style="transition-delay:0.3s">
-                        <div class="relative overflow-hidden h-80">
-                            <img src="/assets/she2.jpg" alt="Sarah Jenkins" class="mentor-img w-full h-full object-cover object-top">
-                            <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100"></div>
-                        </div>
-                        <div class="p-6 relative">
-                            <div class="mentor-badge absolute -top-6 left-6 right-6 p-4 rounded-xl">
-                                <h4 class="text-xl font-bold text-accent">Sarah Jenkins</h4>
-                                <p class="text-sm font-medium">Violin · 25 yrs</p>
-                            </div>
-                            <div class="mt-10 text-secondary-text">
-                                <p class="italic">“Royal College of Music. 3 decades of teaching — and I still cry at student concerts.”</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- 3. MEET OUR INSTRUCTORS — premium editorial gallery -->
+<section class="py-24 bg-hover">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
+    <!-- Section Header -->
+    <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end text-center lg:text-left mb-16">
+      <div>
+        <span class="text-accent uppercase tracking-widest font-bold text-sm">
+          Mentors, not just teachers
+        </span>
+        <h3 class="text-4xl md:text-5xl font-serif font-bold text-primary-text mt-2">
+          Your guides
+        </h3>
+      </div>
+      <p class="text-secondary-text max-w-md mt-4 lg:mt-0">
+        Each mentor brings a unique musical DNA — from concert halls to grammys,
+        all choose to teach here.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Mentor Card -->
+      <div class="mentor-card group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+
+        <!-- Image -->
+        <div class="relative overflow-hidden h-80 lg:h-96">
+          <img src="/assets/he4.jpg"
+               alt="Dr. Julian Vance"
+               class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-accent">
+            Dr. Julian Vance
+          </h4>
+          <p class="text-sm font-medium text-primary-text mb-4">
+            Piano & Composition · 22 yrs
+          </p>
+          <p class="text-secondary-text italic">
+            “Technique is the skeleton; emotion is the breath.”
+            Juilliard alum, 2x Grammy educator.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mentor 2 -->
+      <div class="mentor-card group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+
+        <div class="relative overflow-hidden h-80 lg:h-96">
+          <img src="/assets/she1.webp"
+               alt="Elena Rodriguez"
+               class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-accent">
+            Elena Rodriguez
+          </h4>
+          <p class="text-sm font-medium text-primary-text mb-4">
+            Vocal Performance · 18 yrs
+          </p>
+          <p class="text-secondary-text italic">
+            “Your voice is your fingerprint — let's make it unforgettable.”
+            Metropolitan Opera soloist.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mentor 3 -->
+      <div class="mentor-card group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+
+        <div class="relative overflow-hidden h-80 lg:h-96">
+          <img src="/assets/men2.png"
+               alt="Marcus Chen"
+               class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-accent">
+            Marcus Chen
+          </h4>
+          <p class="text-sm font-medium text-primary-text mb-4">
+            Digital Production · 15 yrs
+          </p>
+          <p class="text-secondary-text italic">
+            “I’ll help you find your unique sonic signature.”
+          </p>
+        </div>
+      </div>
+
+      <!-- Mentor 4 -->
+      <div class="mentor-card group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+
+        <div class="relative overflow-hidden h-80 lg:h-96">
+          <img src="/assets/she2.jpg"
+               alt="Sarah Jenkins"
+               class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-accent">
+            Sarah Jenkins
+          </h4>
+          <p class="text-sm font-medium text-primary-text mb-4">
+            Violin · 25 yrs
+          </p>
+          <p class="text-secondary-text italic">
+            “3 decades of teaching — and I still cry at student concerts.”
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
         <!-- 4. ACHIEVEMENTS & MILESTONES — timeline visual + big numbers -->
         <section class="py-28 bg-background relative overflow-hidden">
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(var(--color-accent) 1px, transparent 1px); background-size: 30px 30px;"></div>
@@ -981,6 +1025,30 @@ html[data-theme='dark'] .mentor-badge p {
                     </svg>
                     <span class="text-xs mt-1 text-secondary-text">RTL</span>
                 </button>
+                <button id="drawer-search" class="icon-btn flex flex-col items-center text-primary-text hover:text-accent p-2 transition duration-200">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
+    <span class="text-xs mt-1 text-secondary-text">Search</span>
+</button>
+<button id="drawer-theme-toggle" 
+    class="icon-btn flex flex-col items-center text-primary-text hover:text-accent p-2 transition duration-200">
+
+    <!-- Light Icon (Sun) -->
+    <svg class="w-6 h-6 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+    </svg>
+
+    <!-- Dark Icon (Moon) -->
+    <svg class="w-6 h-6 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+    </svg>
+
+    <span class="text-xs mt-1 text-secondary-text">Theme</span>
+</button>
                
                 
             </div>
@@ -1008,7 +1076,7 @@ html[data-theme='dark'] .mentor-badge p {
                 <div><h4 class="footer-heading font-semibold text-lg mb-4">Quick Links</h4><ul class="space-y-2"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="booking.html" class="footer-link">Book Now</a></li><li><a href="services.html" class="footer-link">Services</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="about.html" class="footer-link">About</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
                 <div><h4 class="footer-heading font-semibold text-lg mb-4">Music Updates</h4><p class="text-sm mb-4 footer-newsletter-text">Get exclusive academy updates.</p><div class="flex flex-col space-y-3"><input type="email" placeholder="Your email address" class="p-3 text-sm rounded-lg bg-gray-800 border border-gray-700 focus:ring-1 focus:ring-lavender focus:outline-none text-white placeholder-gray-400" /></div></div>
             </div>
-            <div class="py-4 text-center text-gray-400 text-xs">© 2025 Groww Music. All rights reserved. <span class="hover:text-lavender transition cursor-pointer">| Privacy Policy</span> <span class="hover:text-lavender transition cursor-pointer">| Terms of Service</span></div>
+            <div class="py-4 text-center text-gray-400 text-xs">© 2026 Groww Music. All rights reserved. <span class="hover:text-lavender transition cursor-pointer">| Privacy Policy</span> <span class="hover:text-lavender transition cursor-pointer">| Terms of Service</span></div>
         </div>
     </footer>
 
@@ -1017,10 +1085,21 @@ html[data-theme='dark'] .mentor-badge p {
             const html = document.documentElement;
 
             // --- 1. Theme Logic ---
-            const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('mobile-theme-toggle')].filter(Boolean);
-            const lightIcons = document.querySelectorAll('.light-icon');
-            const darkIcons = document.querySelectorAll('.dark-icon');
-
+// --- 1. Theme Logic ---
+const themeToggles = [
+    document.getElementById('theme-toggle'),
+    document.getElementById('mobile-theme-toggle'),
+    document.getElementById('drawer-theme-toggle')
+].filter(Boolean);
+const drawerSearch = document.getElementById('drawer-search');
+if (drawerSearch) {
+    drawerSearch.addEventListener('click', () => {
+        toggleSearch(true);
+        closeDrawer();
+    });
+}
+const lightIcons = document.querySelectorAll('.light-icon');
+const darkIcons = document.querySelectorAll('.dark-icon');
             const applyTheme = (theme) => {
                 html.setAttribute('data-theme', theme);
                 lightIcons.forEach(icon => icon.classList.toggle('hidden', theme === 'dark'));
