@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/assets/growwpark_logo.jpg" type="image/jpeg">
+
     <title>Groww Music · Admin Workspace</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -147,6 +149,19 @@
         html[dir="rtl"] .sidebar-link { flex-direction: row-reverse; }
         html[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
         html[dir="rtl"] .border-l { border-left: 0; border-right: 1px solid var(--color-border); }
+        
+        /* Mobile Overlay */
+        #mobile-overlay {
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #mobile-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="antialiased bg-background flex flex-col min-h-screen w-full">
@@ -154,12 +169,20 @@
     <!-- TOP BAR -->
     <header class="border-b border-border bg-background sticky top-0 z-50 w-full">
         <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between gap-3">
-            <!-- Brand -->
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <a href="#" class="text-xl sm:text-2xl font-serif font-extrabold tracking-wide">
-                    <span class="text-purple">Groww</span><span class="text-lavender">Music</span>
-                    <span class="ml-2 text-[10px] uppercase tracking-tighter bg-purple-100 text-purple px-2 py-0.5 rounded-md hidden sm:inline-block">Admin</span>
-                </a>
+            
+            <!-- Left Side: Hamburger + Brand -->
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-toggle" class="lg:hidden p-2 -ml-2 rounded-xl hover:bg-hover transition text-primary-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <a href="index.html" class="text-xl sm:text-2xl font-serif font-extrabold tracking-wide">
+                        <span class="text-purple">Groww</span><span class="text-lavender">Music</span>
+                        <span class="ml-2 text-[10px] uppercase tracking-tighter bg-purple-100 text-purple px-2 py-0.5 rounded-md hidden sm:inline-block">Admin</span>
+                    </a>
+                </div>
             </div>
 
             <!-- Utilities -->
@@ -190,13 +213,25 @@
         </div>
     </header>
 
+    <!-- MOBILE OVERLAY -->
+    <div id="mobile-overlay" class="fixed inset-0 z-[55] lg:hidden"></div>
+
     <!-- MAIN LAYOUT -->
-    <main class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-6 flex-grow w-full">
+    <main class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-6 flex-grow w-full relative">
         <div class="flex flex-col lg:flex-row gap-6 xl:gap-8">
             
             <!-- SIDEBAR -->
-            <aside class="w-full lg:w-72 xl:w-80 flex-shrink-0">
-                <div class="dashboard-card p-4 lg:sticky lg:top-24 bg-sidebar">
+            <aside id="sidebar-container" class="fixed lg:static top-0 left-0 h-full lg:h-auto w-72 lg:w-72 xl:w-80 z-[60] lg:z-10 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out bg-sidebar lg:bg-transparent lg:flex-shrink-0">
+                <div class="dashboard-card p-4 lg:sticky lg:top-24 bg-sidebar h-full lg:h-auto border-r lg:border border-border lg:rounded-[1.25rem] rounded-none shadow-none lg:shadow-md overflow-y-auto">
+                    
+                    <!-- Mobile Close Button -->
+                    <div class="flex lg:hidden justify-between items-center mb-6 px-2">
+                        <span class="text-xs font-bold uppercase tracking-widest text-secondary-text">Menu</span>
+                        <button id="close-sidebar" class="p-2 hover:bg-hover rounded-lg text-primary-text">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+
                     <nav class="flex flex-col gap-1">
                         <p class="text-[10px] uppercase tracking-wider text-secondary-text font-bold mt-2 mb-2 px-2">Account</p>
                         <a onclick="activateSection('profile')" class="sidebar-link active" data-section="profile">
@@ -262,17 +297,10 @@
                             <h2 class="text-2xl font-serif font-bold text-primary-text flex items-center gap-3">
                                 <span class="text-accent">👤</span> Admin Profile
                             </h2>
-<button class="text-sm 
-    border border-accent 
-    text-accent 
-    hover:bg-accent 
-    hover:text-black 
-    font-semibold 
-    px-5 py-2.5 
-    rounded-full 
-    transition-all duration-300">
-    Edit Permissions
-</button>                    </div>
+                            <button class="text-sm border border-accent text-accent hover:bg-accent hover:text-white font-semibold px-5 py-2.5 rounded-full transition-all duration-300">
+                                Edit Permissions
+                            </button>                    
+                        </div>
                         
                         <div class="mt-8 flex flex-col md:flex-row gap-8 items-start">
                             <div class="w-28 h-28 rounded-full bg-accent/20 border-4 border-accent-light flex items-center justify-center text-4xl text-accent font-bold">AR</div>
@@ -310,14 +338,12 @@
                         <div class="lg:col-span-2 dashboard-card p-6 flex flex-col">
                             <h3 class="font-serif font-bold text-lg mb-6 text-primary-text">Monthly Revenue Growth</h3>
                             <div class="flex-grow flex items-end justify-between h-64 sm:h-72 gap-3 sm:gap-6 px-4 pb-2 border-b border-border relative">
-                                <!-- Horizontal Guide Lines -->
                                 <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-2">
                                     <div class="border-t border-border/40 w-full"></div>
                                     <div class="border-t border-border/40 w-full"></div>
                                     <div class="border-t border-border/40 w-full"></div>
                                     <div class="border-t border-border/40 w-full"></div>
                                 </div>
-
                                 <div class="flex-1 flex flex-col justify-end items-center group relative h-full">
                                     <div class="chart-bar w-full rounded-t-lg shadow-sm" data-height="45" data-label="$14,200"></div>
                                     <span class="text-[10px] font-bold text-secondary-text mt-3">JAN</span>
@@ -396,14 +422,6 @@
                                         <td class="py-4 font-medium text-amber-600">Pending</td>
                                         <td class="py-4 text-right flex justify-end gap-3"><button class="text-accent hover:underline">Edit</button><button class="text-red-400">Suspend</button></td>
                                     </tr>
-                                    <tr class="hover:bg-hover/30 transition">
-                                        <td class="py-4 font-bold">Sarah Jenkins</td>
-                                        <td class="py-4 text-secondary-text">Vocals (Beg)</td>
-                                        <td class="py-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-500">PAUSED</span></td>
-                                        <td class="py-4 text-secondary-text">Oct 20, 2024</td>
-                                        <td class="py-4 font-medium">N/A</td>
-                                        <td class="py-4 text-right flex justify-end gap-3"><button class="text-accent hover:underline">Edit</button><button class="text-red-400">Suspend</button></td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -421,122 +439,7 @@
                             <div class="w-20 h-20 rounded-full bg-accent/20 mb-4 flex items-center justify-center font-bold text-accent text-xl">ER</div>
                             <h3 class="font-bold">Elena Rodriguez</h3>
                             <p class="text-xs text-secondary-text">Piano & Theory Specialist</p>
-                            <div class="flex gap-2 mt-4">
-                                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">AVAILABLE</span>
-                                <span class="text-[10px] font-bold bg-purple-100 text-purple px-2 py-0.5 rounded-full">42 STUDENTS</span>
-                            </div>
                             <button class="mt-6 w-full py-2 bg-hover border border-border rounded-xl text-xs font-bold hover:bg-accent hover:text-white transition">View Schedule</button>
-                        </div>
-                        <div class="dashboard-card p-5 flex flex-col items-center text-center">
-                            <div class="w-20 h-20 rounded-full bg-accent/20 mb-4 flex items-center justify-center font-bold text-accent text-xl">MC</div>
-                            <h3 class="font-bold">Marcus Chen</h3>
-                            <p class="text-xs text-secondary-text">Digital Music Production</p>
-                            <div class="flex gap-2 mt-4">
-                                <span class="text-[10px] font-bold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">IN-CLASS</span>
-                                <span class="text-[10px] font-bold bg-purple-100 text-purple px-2 py-0.5 rounded-full">28 STUDENTS</span>
-                            </div>
-                            <button class="mt-6 w-full py-2 bg-hover border border-border rounded-xl text-xs font-bold hover:bg-accent hover:text-white transition">View Schedule</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION: COURSES -->
-                <div id="courses" class="section-content hidden">
-                    <div class="mb-6">
-                        <h2 class="text-xl font-serif font-bold text-primary-text">🎸 Course Inventory</h2>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="dashboard-card overflow-hidden">
-                            <div class="h-24 bg-accent-gradient p-5 flex items-end">
-                                <h3 class="text-white font-bold text-lg">Classical Piano (Advanced)</h3>
-                            </div>
-                            <div class="p-5">
-                                <div class="flex justify-between text-xs text-secondary-text mb-4">
-                                    <span>Enrollments: 48</span>
-                                    <span>Revenue: $4,200/mo</span>
-                                </div>
-                                <div class="w-full bg-border h-2 rounded-full mb-6">
-                                    <div class="bg-accent h-2 rounded-full" style="width: 85%"></div>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-1 rounded-md font-bold uppercase">Trending</span>
-                                    <button class="text-xs font-bold text-accent hover:underline">Manage Syllabus →</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dashboard-card overflow-hidden">
-                            <div class="h-24 bg-slate-200 dark:bg-slate-800 p-5 flex items-end">
-                                <h3 class="text-primary-text font-bold text-lg">Electronic Music Production</h3>
-                            </div>
-                            <div class="p-5">
-                                <div class="flex justify-between text-xs text-secondary-text mb-4">
-                                    <span>Enrollments: 32</span>
-                                    <span>Revenue: $2,880/mo</span>
-                                </div>
-                                <div class="w-full bg-border h-2 rounded-full mb-6">
-                                    <div class="bg-accent h-2 rounded-full" style="width: 40%"></div>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded-md font-bold uppercase">Modern</span>
-                                    <button class="text-xs font-bold text-accent hover:underline">Manage Syllabus →</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION: BOOKINGS -->
-                <div id="bookings" class="section-content hidden">
-                    <div class="dashboard-card p-6">
-                        <h2 class="text-xl font-serif font-bold text-primary-text mb-6">🗓️ Live Studio Bookings</h2>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl border border-border">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-slate-400 text-white flex items-center justify-center font-bold">10</div>
-                                    <div>
-                                        <p class="font-bold text-sm">Vocal Mastery - Studio A</p>
-                                        <p class="text-xs text-secondary-text">Maya Simone with Elena R.</p>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-sm font-bold">10:30 AM</p>
-                                    <span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">PAID</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl border border-border">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-slate-400 text-white flex items-center justify-center font-bold">12</div>
-                                    <div>
-                                        <p class="font-bold text-sm">Mixing & Mastering - Studio B</p>
-                                        <p class="text-xs text-secondary-text">Ethan Walters with Marcus C.</p>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-sm font-bold">12:15 PM</p>
-                                    <span class="text-[10px] font-bold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">PENDING</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION: AUDIT -->
-                <div id="audit" class="section-content hidden">
-                    <div class="dashboard-card p-6">
-                        <h2 class="text-xl font-serif font-bold text-primary-text mb-6">🛡️ System Audit Logs</h2>
-                        <div class="relative pl-8 space-y-8 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-border">
-                            <div class="relative">
-                                <span class="absolute left-[-26px] top-1 w-3 h-3 rounded-full bg-accent border-2 border-white dark:border-black"></span>
-                                <p class="text-[10px] font-bold text-accent uppercase">Today 09:42 AM</p>
-                                <p class="text-sm font-bold">Admin alex.r updated teacher permissions</p>
-                                <p class="text-xs text-secondary-text">IP: 192.168.1.1 · Browser: Chrome OS</p>
-                            </div>
-                            <div class="relative">
-                                <span class="absolute left-[-26px] top-1 w-3 h-3 rounded-full bg-border border-2 border-white dark:border-black"></span>
-                                <p class="text-[10px] font-bold text-secondary-text uppercase">Today 08:15 AM</p>
-                                <p class="text-sm font-bold">System automatic backup completed</p>
-                                <p class="text-xs text-secondary-text">Server: AWS-EU-WEST-1</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -553,10 +456,6 @@
                             <div class="flex items-center justify-between pb-4 border-b border-border">
                                 <div><p class="font-bold text-sm">Maintenance Mode</p><p class="text-xs text-secondary-text">Restrict student access during updates</p></div>
                                 <div class="w-12 h-6 bg-border rounded-full p-1 flex items-center cursor-pointer"><span class="w-4 h-4 bg-white rounded-full"></span></div>
-                            </div>
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
-                                <div><p class="font-bold text-sm">System Language</p></div>
-                              
                             </div>
                             <div class="pt-4 flex gap-4">
                                 <button class="bg-hover border border-border px-8 py-2.5 rounded-xl text-xs font-bold transition">Reset Defaults</button>
@@ -575,8 +474,11 @@
                         <h2 class="text-2xl font-serif font-bold text-primary-text">Terminate session?</h2>
                         <p class="text-secondary-text mt-3 text-sm leading-relaxed">System logs will record your sign-out timestamp. Ensure all pending course updates are saved.</p>
                         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                            <button class="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-3 rounded-xl text-xs transition">Confirm Termination</button>
-                            <button onclick="activateSection('profile')" class="bg-hover border border-border px-8 py-3 rounded-xl text-xs font-bold transition">Stay Logged In</button>
+<button 
+    onclick="window.location.href='auth.html'" 
+    class="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-3 rounded-xl text-xs transition">
+    Confirm Termination
+</button>                            <button onclick="activateSection('profile')" class="bg-hover border border-border px-8 py-3 rounded-xl text-xs font-bold transition">Stay Logged In</button>
                         </div>
                     </div>
                 </div>
@@ -609,7 +511,29 @@
 
             const htmlEl = document.documentElement;
 
-            // ----- 1. THEME ENGINE -----
+            // ----- 1. MOBILE MENU ENGINE -----
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar-container');
+            const overlay = document.getElementById('mobile-overlay');
+
+            function toggleMobileMenu(isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scroll
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (menuToggle) menuToggle.addEventListener('click', () => toggleMobileMenu(true));
+            if (closeSidebar) closeSidebar.addEventListener('click', () => toggleMobileMenu(false));
+            if (overlay) overlay.addEventListener('click', () => toggleMobileMenu(false));
+
+            // ----- 2. THEME ENGINE -----
             const themeBtn = document.getElementById('theme-toggle-admin');
             function setTheme(theme) {
                 htmlEl.setAttribute('data-theme', theme);
@@ -620,7 +544,7 @@
             setTheme(localStorage.getItem('admin_theme') || 'light');
             if (themeBtn) themeBtn.addEventListener('click', () => setTheme(htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
 
-            // ----- 2. RTL ENGINE -----
+            // ----- 3. RTL ENGINE -----
             const langBtn = document.getElementById('lang-toggle');
             function setDirection(dir) {
                 htmlEl.setAttribute('dir', dir);
@@ -629,7 +553,7 @@
             setDirection((localStorage.getItem('admin_lang') === 'ar') ? 'rtl' : 'ltr');
             if (langBtn) langBtn.addEventListener('click', () => setDirection(htmlEl.getAttribute('dir') === 'ltr' ? 'rtl' : 'ltr'));
 
-            // ----- 3. CHART ANIMATION ENGINE -----
+            // ----- 4. CHART ANIMATION ENGINE -----
             function animateCharts() {
                 const bars = document.querySelectorAll('.chart-bar');
                 bars.forEach(bar => bar.style.height = '0%');
@@ -641,7 +565,7 @@
                 }, 50);
             }
 
-            // ----- 4. NAVIGATION ENGINE -----
+            // ----- 5. NAVIGATION ENGINE -----
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
             const sectionDivs = document.querySelectorAll('.section-content');
             
@@ -659,12 +583,16 @@
                     animateCharts();
                 }
 
-                if (window.innerWidth < 1024) window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Close mobile menu after selection
+                if (window.innerWidth < 1024) {
+                    toggleMobileMenu(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             };
 
             // Init default
             window.onload = () => {
-                activateSection('revenue'); 
+                activateSection('profile'); 
             };
         })();
     </script>

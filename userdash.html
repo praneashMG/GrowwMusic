@@ -92,6 +92,7 @@
             font-weight: 450;
             margin-bottom: 0.25rem;
             white-space: nowrap;
+            cursor: pointer;
         }
         .sidebar-link:hover, .sidebar-link.active {
             background-color: var(--color-accent-light);
@@ -109,6 +110,7 @@
         /* RTL Handling */
         html[dir="rtl"] .sidebar-link { flex-direction: row-reverse; }
         html[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
+        html[dir="rtl"] .sidebar-link svg { transform: scaleX(-1); }
 
         /* Animations */
         .reveal {
@@ -125,40 +127,64 @@
         .bg-accent-gradient {
             background: linear-gradient(145deg, #5E2CA5 0%, #B784F7 100%);
         }
-@media (max-width: 400px) {
-    header .max-w-\[1920px\] {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-    }
 
-    #admin-utility {
-        gap: 6px !important;
-    }
+        @media (max-width: 400px) {
+            header .max-w-\[1920px\] {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
 
-    .sidebar-link span {
-        font-size: 13px;
-    }
-}
+            #admin-utility {
+                gap: 6px !important;
+            }
+
+            .sidebar-link span {
+                font-size: 13px;
+            }
+        }
+
         /* Responsive Table Fix */
         .custom-scrollbar::-webkit-scrollbar { height: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 10px; }
+
+        /* Mobile Sidebar Overrides */
+        #mobile-overlay {
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #mobile-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="antialiased bg-background flex flex-col min-h-screen w-full">
 
     <!-- TOP BAR -->
-    <header class="border-b border-border bg-background sticky top-0 z-40 w-full">
-<div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-3 
-flex items-center justify-between gap-3">            <!-- Brand -->
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-serif font-extrabold tracking-wide">
-                    <span class="text-purple">Groww</span><span class="text-lavender">Music</span>
-                </a>
+    <header class="border-b border-border bg-background sticky top-0 z-50 w-full">
+        <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between gap-3">
+            
+            <!-- Hamburger + Brand -->
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-toggle" class="lg:hidden p-2 -ml-2 rounded-xl hover:bg-hover transition text-primary-text" title="Open Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-serif font-extrabold tracking-wide">
+                        <span class="text-purple">Groww</span><span class="text-lavender">Music</span>
+                    </a>
+                </div>
             </div>
 
             <!-- Utilities -->
-<div class="flex items-center gap-2 sm:gap-4 shrink-0 rtl:flex-row-reverse" id="admin-utility">                <button id="lang-toggle" class="p-2 rounded-full hover:bg-hover transition text-primary-text" title="Toggle RTL/LTR">
+            <div class="flex items-center gap-2 sm:gap-4 shrink-0 rtl:flex-row-reverse" id="admin-utility">
+                <button id="lang-toggle" class="p-2 rounded-full hover:bg-hover transition text-primary-text" title="Toggle RTL/LTR">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 0c2.5 2.8 2.5 12.2 0 15m0-15c-2.5 2.8-2.5 12.2 0 15M3 12h18" />
                     </svg>
@@ -174,15 +200,15 @@ flex items-center justify-between gap-3">            <!-- Brand -->
                 </button>
 
                 <!-- Profile Small -->
-<div class="relative flex items-center gap-2 pl-2 sm:pl-3 
-border-l border-border rtl:border-l-0 rtl:border-r 
-min-w-0">                    <div class="relative flex-shrink-0">
+                <div class="relative flex items-center gap-2 pl-2 sm:pl-3 border-l border-border rtl:border-l-0 rtl:border-r min-w-0">
+                    <div class="relative flex-shrink-0">
                         <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">
                             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                         </div>
                         <span class="absolute bottom-0 right-0 status-pulse"></span>
                     </div>
-<div class="hidden sm:block md:block text-sm">                        <p class="font-medium leading-none">Maya S.</p>
+                    <div class="hidden sm:block md:block text-sm">
+                        <p class="font-medium leading-none">Maya S.</p>
                         <p class="text-xs text-secondary-text mt-1">Student</p>
                     </div>
                 </div>
@@ -190,13 +216,28 @@ min-w-0">                    <div class="relative flex-shrink-0">
         </div>
     </header>
 
+    <!-- MOBILE OVERLAY -->
+    <div id="mobile-overlay" class="fixed inset-0 z-[55] lg:hidden"></div>
+
     <!-- MAIN LAYOUT -->
-    <main class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-6 flex-grow w-full">
+    <main class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-6 flex-grow w-full relative">
         <div class="flex flex-col lg:flex-row gap-6 xl:gap-10">
             
             <!-- SIDEBAR -->
-            <aside class="w-full lg:w-72 xl:w-80 flex-shrink-0">
-                <div class="dashboard-card p-5 lg:sticky lg:top-24 bg-sidebar">
+            <aside id="sidebar-container" class="fixed lg:static top-0 left-0 h-full lg:h-auto w-72 lg:w-72 xl:w-80 z-[60] lg:z-10 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out bg-sidebar lg:bg-transparent lg:flex-shrink-0">
+                <div class="dashboard-card p-5 lg:sticky lg:top-24 bg-sidebar h-full lg:h-auto border-r lg:border border-border lg:rounded-[1.25rem] rounded-none shadow-none lg:shadow-md overflow-y-auto">
+                    
+                    <!-- Mobile Sidebar Header -->
+                    <div class="flex lg:hidden justify-between items-center mb-6 px-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-accent-gradient flex items-center justify-center text-white font-bold text-xs">MS</div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-primary-text">Studio Menu</span>
+                        </div>
+                        <button id="close-sidebar" class="p-2 hover:bg-hover rounded-lg text-primary-text">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+
                     <div class="flex items-center gap-3 pb-5 mb-4 border-b border-border">
                         <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-xl flex-shrink-0">
                             MS
@@ -330,25 +371,11 @@ min-w-0">                    <div class="relative flex-shrink-0">
                                         <td class="py-4 px-2"><span class="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 px-2.5 py-1 rounded-full text-[10px] font-bold">COMPLETED</span></td>
                                         <td class="py-4 px-2 text-right"><button class="text-accent font-bold hover:scale-110 transition">PDF</button></td>
                                     </tr>
-                                    <tr class="hover:bg-hover/30 transition-colors">
-                                        <td class="py-4 px-2 font-bold">#GW-4790</td>
-                                        <td class="py-4 px-2 text-secondary-text">Apr 2, 2026</td>
-                                        <td class="py-4 px-2 font-medium">$120.50</td>
-                                        <td class="py-4 px-2"><span class="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 px-2.5 py-1 rounded-full text-[10px] font-bold">COMPLETED</span></td>
-                                        <td class="py-4 px-2 text-right"><button class="text-accent font-bold hover:scale-110 transition">PDF</button></td>
-                                    </tr>
-                                    <tr class="hover:bg-hover/30 transition-colors">
-                                        <td class="py-4 px-2 font-bold">#GW-4732</td>
-                                        <td class="py-4 px-2 text-secondary-text">Mar 27, 2026</td>
-                                        <td class="py-4 px-2 font-medium">$45.00</td>
-                                        <td class="py-4 px-2"><span class="bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 px-2.5 py-1 rounded-full text-[10px] font-bold">PENDING</span></td>
-                                        <td class="py-4 px-2 text-right"><button class="text-accent font-bold hover:scale-110 transition">PDF</button></td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="mt-8 pt-4 border-t border-border flex justify-between items-center text-xs">
-                            <span class="text-secondary-text font-medium">Showing 3 latest orders</span>
+                            <span class="text-secondary-text font-medium">Showing latest orders</span>
                             <a href="#" class="text-accent font-bold hover:underline">View All Orders →</a>
                         </div>
                     </div>
@@ -374,16 +401,6 @@ min-w-0">                    <div class="relative flex-shrink-0">
                                     <p class="text-sm text-secondary-text line-clamp-2">Great progress today! Let's prepare for the spring recital by reviewing the Chopin piece.</p>
                                 </div>
                             </div>
-                            <div class="p-4 rounded-2xl border border-border flex items-start gap-4 hover:bg-hover transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center font-bold text-accent flex-shrink-0">GW</div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex justify-between items-center mb-1">
-                                        <p class="font-bold text-sm">Support Team</p>
-                                        <span class="text-[10px] text-secondary-text">Yesterday</span>
-                                    </div>
-                                    <p class="text-sm text-secondary-text line-clamp-1">Your sheet music order #GW-4821 is ready for download.</p>
-                                </div>
-                            </div>
                         </div>
                         <button class="w-full mt-6 py-3 text-xs font-bold text-accent border border-accent/20 rounded-xl hover:bg-accent/5 transition">Open Messenger Interface</button>
                     </div>
@@ -401,14 +418,6 @@ min-w-0">                    <div class="relative flex-shrink-0">
                                 <div class="min-w-0 flex-1">
                                     <p class="font-bold text-sm truncate">Piano Masterclass</p>
                                     <p class="text-[10px] text-secondary-text">Prof. Marcus</p>
-                                </div>
-                                <button class="text-accent text-xl">×</button>
-                            </div>
-                            <div class="p-4 rounded-2xl border border-border flex items-center gap-4 hover:border-accent-light transition">
-                                <div class="text-2xl">🎼</div>
-                                <div class="min-w-0 flex-1">
-                                    <p class="font-bold text-sm truncate">Theory Workbook</p>
-                                    <p class="text-[10px] text-secondary-text">Digital PDF</p>
                                 </div>
                                 <button class="text-accent text-xl">×</button>
                             </div>
@@ -447,7 +456,7 @@ min-w-0">                    <div class="relative flex-shrink-0">
                         <h2 class="text-2xl font-serif font-bold text-primary-text">Sign out of your studio?</h2>
                         <p class="text-secondary-text mt-3 text-sm leading-relaxed">Your progress and lessons will be saved and waiting for your return.</p>
                         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="auth.html" class="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-3 rounded-full text-xs transition shadow-lg shadow-red-200">Yes, Sign Out</a>
+                            <button class="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-3 rounded-full text-xs transition shadow-lg shadow-red-200">Yes, Sign Out</button>
                             <button onclick="activateSection('profile')" class="bg-hover border border-border px-8 py-3 rounded-full text-xs font-bold transition">Cancel</button>
                         </div>
                     </div>
@@ -484,8 +493,31 @@ min-w-0">                    <div class="relative flex-shrink-0">
         (function() {
             'use strict';
 
-            // ----- 1. THEME ENGINE -----
             const htmlEl = document.documentElement;
+
+            // ----- 1. MOBILE MENU ENGINE -----
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar-container');
+            const overlay = document.getElementById('mobile-overlay');
+
+            function toggleMobileMenu(isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; 
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (menuToggle) menuToggle.addEventListener('click', () => toggleMobileMenu(true));
+            if (closeSidebar) closeSidebar.addEventListener('click', () => toggleMobileMenu(false));
+            if (overlay) overlay.addEventListener('click', () => toggleMobileMenu(false));
+
+            // ----- 2. THEME ENGINE -----
             const themeBtn = document.getElementById('theme-toggle-user');
             const lightIcons = document.querySelectorAll('.light-icon');
             const darkIcons = document.querySelectorAll('.dark-icon');
@@ -499,13 +531,13 @@ min-w-0">                    <div class="relative flex-shrink-0">
             const savedTheme = localStorage.getItem('theme') || 'light';
             setTheme(savedTheme);
             if (themeBtn) {
-                themeBtn.addEventListener('click', (e) => {
+                themeBtn.addEventListener('click', () => {
                     const current = htmlEl.getAttribute('data-theme');
                     setTheme(current === 'light' ? 'dark' : 'light');
                 });
             }
 
-            // ----- 2. RTL ENGINE -----
+            // ----- 3. RTL ENGINE -----
             const langBtn = document.getElementById('lang-toggle');
             function setDirection(dir) {
                 htmlEl.setAttribute('dir', dir);
@@ -520,7 +552,7 @@ min-w-0">                    <div class="relative flex-shrink-0">
                 });
             }
 
-            // ----- 3. REVEAL SCROLL ENGINE -----
+            // ----- 4. REVEAL SCROLL ENGINE -----
             function checkReveal() {
                 const reveals = document.querySelectorAll('.reveal');
                 reveals.forEach(el => {
@@ -534,24 +566,21 @@ min-w-0">                    <div class="relative flex-shrink-0">
             window.addEventListener('scroll', checkReveal);
             window.addEventListener('load', checkReveal);
 
-            // ----- 4. NAVIGATION ENGINE -----
+            // ----- 5. NAVIGATION ENGINE -----
             const sections = ['profile', 'orders', 'saved', 'messages', 'settings', 'logout'];
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
             
             window.activateSection = function(sectionId) {
-                // Hide all
                 sections.forEach(id => {
                     const el = document.getElementById(id);
                     if (el) el.classList.add('hidden');
                 });
-                // Show targeted
                 const activeEl = document.getElementById(sectionId);
                 if (activeEl) {
                     activeEl.classList.remove('hidden');
                     activeEl.classList.add('active');
                 }
 
-                // Sidebar UI
                 sidebarLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.dataset.section === sectionId) {
@@ -559,8 +588,8 @@ min-w-0">                    <div class="relative flex-shrink-0">
                     }
                 });
 
-                // Scroll to top on mobile
                 if (window.innerWidth < 1024) {
+                    toggleMobileMenu(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             };
@@ -573,7 +602,6 @@ min-w-0">                    <div class="relative flex-shrink-0">
                 });
             });
 
-            // Init
             activateSection('profile');
         })();
     </script>
